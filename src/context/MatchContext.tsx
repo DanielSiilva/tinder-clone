@@ -30,7 +30,7 @@ interface OrderContextProviderProps {
 export function MatchContextProvider({ children }: OrderContextProviderProps) {
     const [profile, setProfile] = useState<Profile>({} as Profile)
 
-    console.log(profile)
+   
 
     async function fetchProfile(){
       const response = await api.get('/person')

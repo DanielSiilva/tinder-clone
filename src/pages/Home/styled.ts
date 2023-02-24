@@ -1,4 +1,6 @@
+
 import styled from "styled-components";
+
 
 
 export const Wrapper =styled.div`
@@ -24,14 +26,34 @@ export const LogoContainer = styled.img`
 
 `
 export const Content = styled.div`
-    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
 
     width: 100%;
     height: 80%;
 
-    color: black;
+`
+export const PhotoProfile = styled.img`
+    max-width: 100%;
+    height: 300px;
 
 `
+export const ProfileInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+
+
+    p{
+        font-weight: bold;
+        font-size: 1rem;
+        color: ${props => props.theme['black']};
+    }
+
+
+`
+
 
 export const FooterContainer = styled.div`
     display: flex;

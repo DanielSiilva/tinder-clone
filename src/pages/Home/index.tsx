@@ -2,7 +2,9 @@ import {
     Wrapper,
     LogoContainer,
     Content,
-    FooterContainer
+    FooterContainer,
+    PhotoProfile,
+    ProfileInfo
 } from "./styled"
 
 import Logo from  '../../assets/Logo.svg'
@@ -20,7 +22,16 @@ export function Home (){
         <Wrapper>
             <LogoContainer src={Logo} alt='logo to app: tinder'/>
             <Content>
-                <p>{profile.name}</p>
+                <PhotoProfile 
+                    src={profile.photo}
+                    alt={profile.photo_alt}
+                    title={profile.name}
+                 />
+                
+                <ProfileInfo>
+                    <p>{profile.name}, <span>{profile.age}</span> anos</p>
+                    <p>Bio: <span>{profile.bio}</span></p>
+                </ProfileInfo>
             </Content>
 
 
