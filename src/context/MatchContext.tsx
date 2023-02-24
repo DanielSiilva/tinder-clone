@@ -18,7 +18,8 @@ interface Profile {
 
   
 interface MatchContextType {
-    profile: Profile
+    profile: Profile,
+    fetchMatches: (id: string) => Promise<void>,
 }
   
 export const MatchContext = createContext({} as MatchContextType)
@@ -30,11 +31,18 @@ interface OrderContextProviderProps {
 export function MatchContextProvider({ children }: OrderContextProviderProps) {
     const [profile, setProfile] = useState<Profile>({} as Profile)
 
-   
 
     async function fetchProfile(){
       const response = await api.get('/person')
       setProfile(response.data.profile)
+    }
+
+    async function fetchMatches(id: string){
+        await api.post('/choose-person', {
+          'id': id,
+          "choice": true
+        })
+        .then((response) => fetchProfile())
     }
     
 
@@ -45,7 +53,8 @@ export function MatchContextProvider({ children }: OrderContextProviderProps) {
     return (
       <MatchContext.Provider
         value={{
-          profile
+          profile,
+          fetchMatches
         }}
       >
         {children}

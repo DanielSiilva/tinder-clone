@@ -15,7 +15,11 @@ import { MatchContext } from "../../context/MatchContext"
 
 
 export function Home (){
-    const {profile} = useContext(MatchContext)
+    const {profile, fetchMatches} = useContext(MatchContext)
+
+    function handleMatche(){
+        fetchMatches(profile.id)
+    }
 
 
     return(
@@ -44,7 +48,7 @@ export function Home (){
                     />
                 </button>
                 
-                <button title="adicionar">
+                <button title="adicionar" onClick={handleMatche}>
                     <Heart 
                         size={50} 
                         weight='fill' 
