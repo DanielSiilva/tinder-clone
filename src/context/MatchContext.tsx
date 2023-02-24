@@ -34,7 +34,7 @@ export function MatchContextProvider({ children }: OrderContextProviderProps) {
 
     async function fetchProfile(){
       const response = await api.get('/person')
-      setProfile(response.data)
+      setProfile(response.data.profile)
     }
     
 
