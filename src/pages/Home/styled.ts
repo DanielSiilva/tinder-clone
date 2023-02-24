@@ -5,7 +5,10 @@ import styled from "styled-components";
 
 export const Wrapper =styled.div`
     display: flex;
-    width: 376.34px;
+
+
+    width: 100%;
+    
 
     margin: 0 auto;
 
