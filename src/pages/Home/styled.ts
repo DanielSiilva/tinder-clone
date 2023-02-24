@@ -5,9 +5,15 @@ import styled from "styled-components";
 
 export const Wrapper =styled.div`
     display: flex;
-    flex-direction: column;
+    width: 376.34px;
+
+    margin: 0 auto;
+
+   
     
 
-    width: 100vw;
+
+
+    border: 1px solid red;
 
 `
