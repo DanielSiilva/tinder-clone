@@ -29,6 +29,8 @@ export const Content = styled.div`
     width: 100%;
     height: 80%;
 
+    color: black;
+
 `
 
 export const FooterContainer = styled.div`
