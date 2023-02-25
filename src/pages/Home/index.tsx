@@ -18,9 +18,7 @@ import { NavLink } from "react-router-dom"
 export function Home (){
     const {profile, fetchPostMatches} = useContext(MatchContext)
 
-    function handleMatche(){
-        fetchPostMatches(profile.id)
-    }
+   
 
 
     return(
@@ -56,7 +54,7 @@ export function Home (){
                     />
                 </button>
                 
-                <button title="adicionar" onClick={handleMatche}>
+                <button title="adicionar" onClick={fetchPostMatches}>
                     <Heart 
                         size={50} 
                         weight='fill' 
