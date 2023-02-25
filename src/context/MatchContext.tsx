@@ -21,7 +21,8 @@ interface MatchContextType {
     profile: Profile,
     fetchPostMatches: () => Promise<void>,
     matches: Profile[],
-    fetchDislike: () => Promise<void>
+    fetchDislike: () => Promise<void>,
+    fetchPutClearList: () => Promise<void>,
 }
   
 export const MatchContext = createContext({} as MatchContextType)
@@ -64,6 +65,13 @@ export function MatchContextProvider({ children }: OrderContextProviderProps) {
           alert('Erro ao adicionar')
         })
     }
+
+    async function fetchPutClearList(){
+      await api.put('/clear')
+      .then((response) =>alert('Lista limpa'))
+      .catch((error) => error.message)
+    }
+
     
 
     useEffect(() => {
@@ -80,7 +88,8 @@ export function MatchContextProvider({ children }: OrderContextProviderProps) {
           profile,
           fetchPostMatches,
           matches,
-          fetchDislike
+          fetchDislike,
+          fetchPutClearList
         }}
       >
         {children}

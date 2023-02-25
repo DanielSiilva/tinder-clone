@@ -12,7 +12,7 @@ import {
 
 
 export function Matches (){
-    const {matches} = useContext(MatchContext)
+    const {matches, fetchPutClearList} = useContext(MatchContext)
 
 
 
@@ -23,7 +23,7 @@ export function Matches (){
                     <ArrowUUpLeft size={32} />
                 </NavLink>
 
-                <button title='limpar a lista'>
+                <button onClick={fetchPutClearList} title='limpar a lista'>
                     <Clipboard size={32} />
                 </button>
 
