@@ -72,7 +72,7 @@ export function MatchContextProvider({ children }: OrderContextProviderProps) {
 
     useEffect(() => {
       fetchMatches()
-    }, [])
+    }, [matches])
     
     return (
       <MatchContext.Provider
