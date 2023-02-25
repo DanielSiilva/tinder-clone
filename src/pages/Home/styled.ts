@@ -15,14 +15,21 @@ export const Wrapper =styled.div`
 
     margin: 0 auto;
 
-
-
 `
 
 
-export const LogoContainer = styled.img`
-    width: 33.98px;
-    height: 33.98px;
+export const LogoAndListContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+
+    width: 100%;
+    height: 30px;
+
+    img{
+        width: 33.98px;
+        height: 33.98px;
+    }
 
 `
 export const Content = styled.div`

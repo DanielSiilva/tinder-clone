@@ -1,6 +1,6 @@
 import {
     Wrapper,
-    LogoContainer,
+    LogoAndListContainer,
     Content,
     FooterContainer,
     PhotoProfile,
@@ -8,9 +8,10 @@ import {
 } from "./styled"
 
 import Logo from  '../../assets/Logo.svg'
-import { Heart, XCircle } from "phosphor-react"
+import { Heart, UserList, XCircle } from "phosphor-react"
 import { useContext } from "react"
 import { MatchContext } from "../../context/MatchContext"
+import { NavLink } from "react-router-dom"
 
 
 
@@ -24,7 +25,14 @@ export function Home (){
 
     return(
         <Wrapper>
-            <LogoContainer src={Logo} alt='logo to app: tinder'/>
+            <LogoAndListContainer>
+                <img src={Logo} alt='logo to app: tinder'/>
+                <NavLink to={'/'}>
+                    <UserList size={32} />
+                </NavLink>
+                
+            </LogoAndListContainer>
+
             <Content>
                 <PhotoProfile 
                     src={profile.photo}
