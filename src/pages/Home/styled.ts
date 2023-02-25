@@ -31,6 +31,10 @@ export const LogoAndListContainer = styled.div`
         height: 33.98px;
     }
 
+    svg{
+        color: ${props => props.theme['black']};
+    }
+
 `
 export const Content = styled.div`
     display: flex;

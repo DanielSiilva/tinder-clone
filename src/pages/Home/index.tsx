@@ -27,8 +27,8 @@ export function Home (){
         <Wrapper>
             <LogoAndListContainer>
                 <img src={Logo} alt='logo to app: tinder'/>
-                <NavLink to={'/'}>
-                    <UserList size={32} />
+                <NavLink to={'/matches'}>
+                    <UserList size={32} weight='fill'/>
                 </NavLink>
                 
             </LogoAndListContainer>
