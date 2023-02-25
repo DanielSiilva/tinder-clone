@@ -16,10 +16,10 @@ import { NavLink } from "react-router-dom"
 
 
 export function Home (){
-    const {profile, fetchMatches} = useContext(MatchContext)
+    const {profile, fetchPostMatches} = useContext(MatchContext)
 
     function handleMatche(){
-        fetchMatches(profile.id)
+        fetchPostMatches(profile.id)
     }
 
 
