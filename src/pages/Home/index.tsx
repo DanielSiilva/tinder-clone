@@ -16,7 +16,7 @@ import { NavLink } from "react-router-dom"
 
 
 export function Home (){
-    const {profile, fetchPostMatches} = useContext(MatchContext)
+    const {profile, fetchPostMatches, fetchDislike} = useContext(MatchContext)
 
    
 
@@ -46,7 +46,7 @@ export function Home (){
 
 
             <FooterContainer>
-                <button title="rejeitar">
+                <button title="rejeitar" onClick={fetchDislike}>
                     <XCircle 
                         size={50} 
                         weight='fill' 

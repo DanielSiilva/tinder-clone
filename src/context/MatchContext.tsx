@@ -21,6 +21,7 @@ interface MatchContextType {
     profile: Profile,
     fetchPostMatches: () => Promise<void>,
     matches: Profile[],
+    fetchDislike: () => Promise<void>
 }
   
 export const MatchContext = createContext({} as MatchContextType)
@@ -43,6 +44,10 @@ export function MatchContextProvider({ children }: OrderContextProviderProps) {
     async function fetchMatches(){
       const response = await api.get('/matches')
       setMatches(response.data.matches)
+    }
+
+    async function fetchDislike(){
+      fetchProfile()
     }
 
 
@@ -74,7 +79,8 @@ export function MatchContextProvider({ children }: OrderContextProviderProps) {
         value={{
           profile,
           fetchPostMatches,
-          matches
+          matches,
+          fetchDislike
         }}
       >
         {children}
